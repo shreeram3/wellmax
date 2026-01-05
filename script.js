@@ -27,3 +27,22 @@ form.addEventListener("submit", function (e) {
     formMessage.style.color = "green";
     form.reset();
 });
+
+
+const navToggle = document.getElementById("navToggle");
+const mainNav = document.getElementById("mainNav");
+
+navToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+});
+
+
+document.querySelectorAll(".has-mega > a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            this.nextElementSibling.classList.toggle("open");
+        }
+    });
+});
+
